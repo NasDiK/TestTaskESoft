@@ -1,0 +1,82 @@
+.Header{
+    background: black;
+    height: 7.5vh;
+    overflow: hidden;
+}
+
+.Link{
+    color:white;
+    cursor:pointer;
+    font-size:24px;
+    margin-top:5px;
+}
+
+.Link:hover{
+    transition: 0.2s all;
+    color:red;
+}
+
+#toMain{
+    margin-left:10px;
+    float:left;
+}
+
+#toExit{
+    float:right;
+    margin-right:10px;
+}
+
+/*------------------------------------------------------------------------------------------*/
+.Content{
+    height: 85vh;
+    overflow-y: auto;
+    /*overflow-x: hidden;*/
+    background-color: #e1ffa8;
+
+}
+
+#groupSelect{
+    width: unset;
+    display: inline-block;
+    margin-top:5px;
+}
+
+#createTaskButton{
+    float:right;
+    margin-top:5px;
+    display: inline-block;
+    min-width: fit-content;
+
+}
+
+#Tasks{
+    background: white;
+    border-radius: 15px;
+    padding:15px;
+    border: 1px solid black;
+    display:grid;
+    gap:20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+@media only screen and (max-width : 600px) {
+    #Tasks{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    /* Styles */
+}
+
+/*------------------------------------------------------------------------------------------*/
+
+.Footer{
+    background: black;
+    height:7.5vh;
+    overflow: hidden;
+}
+
+#FooterSign{
+    color:gray;
+    float:right;
+    font-size:20px;
+    margin-top:7px;
+}

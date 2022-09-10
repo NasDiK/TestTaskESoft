@@ -1,20 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e5973a6f-f934-4d4f-b1b1-101874f7ca79" name="Changes" comment="" />
+    <list default="true" id="e5973a6f-f934-4d4f-b1b1-101874f7ca79" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/Pages/Components/ModalWindow/Modal.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Pages/Components/ModalWindow/ModalWindow.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Pages/MainPage/MainPage.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Pages/MainPage/MainPage.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Pages/MainPage/TaskBox/TaskBox.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Pages/MainPage/TaskBox/TaskBox.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Stores/MainStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Pages/AuthPage/AuthPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/AuthPage/AuthPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Pages/AuthPage/AuthPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/AuthPage/AuthPage.module.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "last_opened_file_path": "C:/Users/Alexandr-PC/Desktop/TestTask/client/src/Pages/Components",
+    "list.type.of.created.stylesheet": "CSS",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alexandr-PC\Desktop\TestTask\client\src\Pages\Components" />
+    </key>
+  </component>
   <component name="TaskManager">
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>

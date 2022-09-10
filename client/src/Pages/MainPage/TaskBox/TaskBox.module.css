@@ -1,0 +1,38 @@
+.wrapper{
+    border:1px solid black;
+    border-radius: 5px;
+    background-color: lightgrey;
+    height:250px;
+    /*width:250px;*/
+    margin:auto;
+    width: 100%;
+    cursor:pointer;
+    padding:5px;
+}
+
+
+.wrapper:hover{
+    transform: scale(1.02);
+    transition: 0.05s all;
+}
+
+.caption{
+    font-weight: bold;
+    font-size:24px;
+}
+
+.priority{
+    /*font-weight:bold;*/
+}
+
+.responsible{
+    /*font-weight: bold;*/
+}
+
+.status{
+    font-weight: bold;
+}
+
+.endDate{
+    /*font-weight: bold;*/
+}

@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+## Приложение TODO list
+### Описание
+Ваша задача - разработать web приложение, пользователь которого сможет планировать свою деятельность и контролировать работу своих подчиненных при помощи механизма управления задачами.
+### Сущности
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Задача обладает следующим набором атрибутов:
+*	Заголовок
+*	Описание
+*	Дата окончания
+*   Дата создания
+*   Дата обновления
+*   Приоритет (высокий, средний, низкий)
+* 	Статус (к выполнению, выполняется, выполнена, отменена)
+* 	Создатель - пользователь
+* 	Ответственный - пользователь
 
-## Available Scripts
 
-In the project directory, you can run:
+Пользователь:
+*	Имя
+*	Фамилия
+*	Отчество
+*	Логин
+*	Пароль
+*	Руководитель - пользователь
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Описание системы
+#### Страница авторизации
 
-### `npm test`
+При любой попытке доступа к системе пользователю сперва требуется пройти процесс авторизации.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+На странице авторизации отобразите форму с двумя текстовыми полями: логином и паролем, после ввода которых при успешной проверке пользователь перенаправляется на страницу с задачами.
 
-### `npm run build`
+При неуспешной попытке авторизации отобразите на странице одну из возможных ошибок: пользователя с таким логином не существует, пользователь ввел неверный пароль.
+Страница с задачами
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+На странице с задачами отобразите список задач со следующими возможностями отображения:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+*	С группировкой по дате завершения: задачи авторизованного пользователя на сегодня, на неделю, на будущее (больше чем на неделю)
+*	С группировкой по ответственным (режим просмотра для руководителя)
+*	Без группировок: список всех задач, отсортированных по дате последнего обновления
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Заголовки незавершенных задач с датой окончания < текущая дата отображаются красным цветом. Заголовки завершенных задач отображаются зеленым цветом. Остальные - серым.
 
-### `npm run eject`
+В списке для каждой задачи отобразите: заголовок, приоритет, дату окончания, ответственного, статус
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+При клике на задачу открывается модальное окно с возможностью редактирования атрибутов выбранной задачи.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+На странице также присутствует кнопка “Новая задача” при нажатии на которую открывается всё то же модальное окно с возможностью создания новой задачи.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Требования
+* 	пароли пользователей нельзя хранить в незашифрованном виде;
+* 	пользователь может получить доступ к приложению только после авторизации;
+* 	Язык программирования - NodeJS и React ;
+* 	все сущности должны храниться в реляционной бд: mysql, postgresql или другой; 
+* 	пользователи не могут изменять атрибуты задач, созданных их руководителями, кроме статуса;
+* 	пользователь не может указать в качестве ответственного задачи другого пользователя, который не является его подчиненным;
+* 	решение нужно предоставить в виде исходного кода залитого на github;
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Будет плюсом, если:
+*	вы воспользуетесь библиотеками и/или фреймворками;
+*	вы развернете приложение на какой-нибудь платформе для демонстрации. Например на heroku.
