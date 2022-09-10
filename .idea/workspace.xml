@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e5973a6f-f934-4d4f-b1b1-101874f7ca79" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/Pages/Components/ModalWindow/Modal.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/Pages/Components/ModalWindow/ModalWindow.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/Pages/MainPage/MainPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/Pages/MainPage/MainPage.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/Pages/MainPage/TaskBox/TaskBox.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/Pages/MainPage/TaskBox/TaskBox.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/Stores/MainStore.js" afterDir="false" />
+    <list default="true" id="e5973a6f-f934-4d4f-b1b1-101874f7ca79" name="Changes" comment="Разлинован grid. Сделан макет создания задачи. TaskBox подготовлен для стилизации">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Pages/AuthPage/AuthPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/AuthPage/AuthPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Pages/AuthPage/AuthPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/AuthPage/AuthPage.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Pages/MainPage/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/MainPage/MainPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Pages/MainPage/TaskBox/TaskBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/MainPage/TaskBox/TaskBox.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Pages/MainPage/TaskBox/TaskBox.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/MainPage/TaskBox/TaskBox.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +28,8 @@
   "keyToString": {
     "last_opened_file_path": "C:/Users/Alexandr-PC/Desktop/TestTask/client/src/Pages/Components",
     "list.type.of.created.stylesheet": "CSS",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2022.1.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -48,6 +38,14 @@
     </key>
   </component>
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Разлинован grid. Сделан макет создания задачи. TaskBox подготовлен для стилизации">
+      <created>1662789130207</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662789130207</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -65,5 +63,7 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/client" />
     </ignored-roots>
+    <MESSAGE value="Разлинован grid. Сделан макет создания задачи. TaskBox подготовлен для стилизации" />
+    <option name="LAST_COMMIT_MESSAGE" value="Разлинован grid. Сделан макет создания задачи. TaskBox подготовлен для стилизации" />
   </component>
 </project>

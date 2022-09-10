@@ -2,14 +2,18 @@
     border:1px solid black;
     border-radius: 5px;
     background-color: lightgrey;
-    height:250px;
+    min-height:250px;
     /*width:250px;*/
     margin:auto;
-    width: 100%;
+    width:18vw;
     cursor:pointer;
     padding:5px;
 }
 
+.wrapper p{
+    word-wrap: break-word;
+
+}
 
 .wrapper:hover{
     transform: scale(1.02);
@@ -30,7 +34,7 @@
 }
 
 .status{
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 .endDate{

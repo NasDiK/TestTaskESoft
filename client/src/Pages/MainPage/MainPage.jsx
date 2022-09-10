@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import s from './MainPage.module.css';
 import {observer} from "mobx-react";
 import ModalWindow from "../Components/ModalWindow/ModalWindow";
@@ -8,6 +8,53 @@ import TaskBox from "./TaskBox/TaskBox";
 const Main = (props) => {
 
     const [modalActive, setModalActive] = useState(false); //редактировать задачу
+    const [tasks, setTasks] = useState(() => [
+        {
+            caption: 'Заголовок',
+            description:'task1',
+            priority: 'high',
+            status: 'completed',
+            responsible: 'NasDiK',
+            endDate: '2022-09-26'
+        },
+        {
+            caption: 'Задача 2',
+            description:'task2',
+            priority: 'low',
+            status: 'in process',
+            responsible: 'Anton200',
+            endDate: '2022-09-26'
+        },
+        {
+            caption: 'Задача 3',
+            description:'task3',
+            priority: 'low',
+            status: 'in process',
+            responsible: 'Anton200',
+            endDate: '2022-09-09'
+        }
+    ]); //для отображаемого списка задач
+
+    const captionRef=useRef('');
+    const descriptionRef=useRef('');
+    const priorityRef=useRef('');
+    const endDateRef=useRef('');
+    const statusRef=useRef('');
+    const responsibleRef=useRef('');
+    const checkType=useRef('');
+
+    const changeTaskAttributes = function(task){
+        const date = new Date(task.endDate);
+
+        captionRef.current.value=task.caption;
+        descriptionRef.current.value=task.description;
+        priorityRef.current.value=task.priority;
+        endDateRef.current.value=`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
+        statusRef.current.value=task.status;
+        responsibleRef.current.value=task.responsible;
+        checkType.current='change';
+        setModalActive(true);
+    }
 
     return (<>
         <div className={s.Header}>
@@ -18,15 +65,15 @@ const Main = (props) => {
             <h3>Создание задачи</h3>
             <div className="input-group mb-3">
                 <label className="input-group-text" htmlFor="inputGroupName">Название</label>
-                <input type="text" id="inputGroupName" className={`form-control`}/>
+                <input type="text" id="inputGroupName" ref={captionRef} className={`form-control`}/>
             </div>
             <div className="input-group mb-3">
                 <label className="input-group-text" htmlFor="inputGroupDesc">Описание</label>
-                <input type="text" id="inputGroupName" className={`form-control`}/>
+                <input type="text" id="inputGroupName" ref={descriptionRef} className={`form-control`}/>
             </div>
             <div className="input-group mb-3">
                 <label className="input-group-text" htmlFor="inputGroupSelect01">Приоритет</label>
-                <select className="form-select" id="inputGroupSelect01">
+                <select className="form-select" ref={priorityRef} id="inputGroupSelect01">
                     <option value="high">Высокий</option>
                     <option value="medium">Средний</option>
                     <option value="low">Низкий</option>
@@ -34,11 +81,11 @@ const Main = (props) => {
             </div>
             <div className="input-group mb-3">
                 <label htmlFor="endDate" className={'input-group-text'}>Выполнить до </label>
-                <input type="date" name="endDate" className={`form-control`} id="endDate"/>
+                <input type="text" name="endDate" ref={endDateRef} className={`form-control`} id="endDate"/>
             </div>
             <div className="input-group mb-3">
                 <label className="input-group-text" htmlFor="inputGroupStatus">Статус</label>
-                <select className="form-select" id="inputGroupStatus">
+                <select className="form-select" ref={statusRef} id="inputGroupStatus">
                     <option value="created">К выполнению</option>
                     <option value="in process">Выполняется</option>
                     <option value="completed">Выполнена</option>
@@ -47,29 +94,54 @@ const Main = (props) => {
             </div>
             <div className="input-group mb-3">
                 <label className="input-group-text" htmlFor="inputGroupResponsible">Ответственный</label>
-                <select className="form-select" id="inputGroupResponsible">
+                <select className="form-select" ref={responsibleRef} id="inputGroupResponsible">
                     {Array(10).fill({id: 1, name: 'Вася пупкин'}).map((el, index) => <option key={index}
-                        value={`${el.id}`}>{el.name}</option>)}
+                                                                                             value={`${el.id}`}>{el.name}</option>)}
                 </select>
             </div>
-            <button className="btn btn-primary">Готово</button>
+            <button className="btn btn-primary" onClick={()=>{
+                if(checkType.current==='change'){
+                    /*Todo*/
+                }
+                else if (checkType.current==='create'){
+                    /*Todo*/
+                }
+                setModalActive(false);
+            }}>Готово</button>
         </ModalWindow>
         <div className={s.Content}>
             <div>
-                <select className={`form-select mb-3`} id={s.groupSelect} aria-label="Default select example">
-                    <option selected>Группировать задачи:</option>
+                <select className={`form-select mb-3`} id={s.groupSelect} aria-label="Default select example" onChange={()=>setTasks([])}>
+                    <option selected disabled={true}>Группировать задачи:</option>
                     <option value="1">По дате завершения</option>
                     <option value="2">По ответственным (для руководителей)</option>
                     <option value="3">Без группировок</option>
                 </select>
                 <button className="btn btn-primary mb-3" id={s.createTaskButton}
-                        onClick={() => setModalActive(true)}>Новая задача
+                        onClick={() => {
+                            captionRef.current.value='';
+                            descriptionRef.current.value='';
+                            priorityRef.current.value='';
+                            endDateRef.current.value='';
+                            statusRef.current.value='';
+                            responsibleRef.current.value='';
+                            checkType.current = 'create';
+
+                            setModalActive(true)
+                        }}>Новая задача
                 </button>
             </div>
-            <div id={s.Tasks}>
-                {Array(50).fill('').map((_, index) => <TaskBox key={index}>Welcome to the International!</TaskBox>)}
-            </div>
+            {/*--------------------------------------------------------------------------------------------------*/}
+            {tasks.length === 0 ?
+                <h2>Нет доступных задач</h2>
+                :
+                <div id={s.Tasks}>
+                    {tasks.map((el, index) =>
+                        <TaskBox key={index} Task={el} changeTaskAttributes={changeTaskAttributes}/>)}
+                </div>}
+
         </div>
+        {/*--------------------------------------------------------------------------------------------------------*/}
         <div className={s.Footer}>
             <span id={s.FooterSign}>Тестовое задание ESoft. Тунгусов Александр. © Сентябрь 2022</span>
         </div>
