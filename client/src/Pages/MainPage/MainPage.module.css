@@ -57,6 +57,7 @@
     display:grid;
     gap:20px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    min-width: 470px;
 }
 
 @media only screen and (max-width : 600px) {

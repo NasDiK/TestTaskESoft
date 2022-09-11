@@ -10,6 +10,7 @@ const Main = (props) => {
     const [modalActive, setModalActive] = useState(false); //редактировать задачу
     const [tasks, setTasks] = useState(() => [
         {
+            id:1,
             caption: 'Заголовок',
             description:'task1',
             priority: 'high',
@@ -18,6 +19,7 @@ const Main = (props) => {
             endDate: '2022-09-26'
         },
         {
+            id:2,
             caption: 'Задача 2',
             description:'task2',
             priority: 'low',
@@ -26,6 +28,7 @@ const Main = (props) => {
             endDate: '2022-09-26'
         },
         {
+            id:3,
             caption: 'Задача 3',
             description:'task3',
             priority: 'low',
@@ -52,14 +55,14 @@ const Main = (props) => {
         endDateRef.current.value=`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`;
         statusRef.current.value=task.status;
         responsibleRef.current.value=task.responsible;
-        checkType.current='change';
+        checkType.current='change | '+task.id;
         setModalActive(true);
     }
 
     return (<>
         <div className={s.Header}>
             <span className={`${s.Link}`} id={s.toMain}>Главная</span>
-            <span className={`${s.Link}`} id={s.toExit} onClick={() => props.state.changeLogged()}>Выйти</span>
+            <span className={`${s.Link}`} id={s.toExit} onClick={() => props.state.logOut()}>Выйти</span>
         </div>
         <ModalWindow setActive={setModalActive} active={modalActive}>
             <h3>Создание задачи</h3>
@@ -125,7 +128,7 @@ const Main = (props) => {
                             endDateRef.current.value='';
                             statusRef.current.value='';
                             responsibleRef.current.value='';
-                            checkType.current = 'create';
+                            checkType.current = 'create | -1';
 
                             setModalActive(true)
                         }}>Новая задача
