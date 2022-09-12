@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e5973a6f-f934-4d4f-b1b1-101874f7ca79" name="Changes" comment="1)Сделаны сиды и миграции&#10;2)Добавлен авторизационный middleware&#10;3)Авторизация связана с БД">
+    <list default="true" id="e5973a6f-f934-4d4f-b1b1-101874f7ca79" name="Changes" comment="1)Связка с бд&#10;2)Новые задания создаются и изменяются&#10;3)Два блока - личных задач и задач подчиненных">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controllers/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controllers/authController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routers/authRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routers/authRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Pages/MainPage/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/MainPage/MainPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Pages/MainPage/MainPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/MainPage/MainPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Pages/MainPage/TaskBox/TaskBox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/MainPage/TaskBox/TaskBox.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Stores/MainStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Stores/MainStore.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +58,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662887895445</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1)Связка с бд&#10;2)Новые задания создаются и изменяются&#10;3)Два блока - личных задач и задач подчиненных">
+      <created>1662948246502</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1662948246502</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -83,6 +86,7 @@
     <MESSAGE value="Разлинован grid. Сделан макет создания задачи. TaskBox подготовлен для стилизации" />
     <MESSAGE value="1)1 Модальное окно теперь работает на 2 фронта - может как создавать объекты, так и менять их &#10;2)Окраска задач в зависимости от своего статуса и времени&#10;3) Готова для отправки запросов на API" />
     <MESSAGE value="1)Сделаны сиды и миграции&#10;2)Добавлен авторизационный middleware&#10;3)Авторизация связана с БД" />
-    <option name="LAST_COMMIT_MESSAGE" value="1)Сделаны сиды и миграции&#10;2)Добавлен авторизационный middleware&#10;3)Авторизация связана с БД" />
+    <MESSAGE value="1)Связка с бд&#10;2)Новые задания создаются и изменяются&#10;3)Два блока - личных задач и задач подчиненных" />
+    <option name="LAST_COMMIT_MESSAGE" value="1)Связка с бд&#10;2)Новые задания создаются и изменяются&#10;3)Два блока - личных задач и задач подчиненных" />
   </component>
 </project>

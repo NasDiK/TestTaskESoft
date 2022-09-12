@@ -4,6 +4,12 @@
     overflow: hidden;
 }
 
+.Title{
+    color:aquamarine;
+    font-size:20px;
+    margin-top:7px;
+}
+
 .Link{
     color:white;
     cursor:pointer;
