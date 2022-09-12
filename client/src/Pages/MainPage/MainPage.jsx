@@ -64,22 +64,21 @@ const Main = (props) => {
         const result = [];
         switch (value) {
             case 'byEndDate': {
-                const groupOwnTasks = new Array(4); //|today|tomorrow|future|other
-                const todayDate = new Date().toLocaleDateString();
+                const groupOwnTasks = new Array(4); //|today|week|future|other
+                const todayDate = new Date()
                 let tomorrowDate = new Date();
                 tomorrowDate.setDate(tomorrowDate.getDate() + 1);
-                tomorrowDate = tomorrowDate.toLocaleString();
                 let nextWeekDate = new Date();
                 nextWeekDate.setDate(nextWeekDate.getDate() + 7);
 
                 groupOwnTasks[0] = props.state.user.ownTasks.filter((tsk) => {
                     const taskDate = new Date(tsk.endDate).toLocaleDateString();
-                    return taskDate === todayDate;
+                    return taskDate === todayDate.toLocaleDateString();
                 });
                 groupOwnTasks[1] = props.state.user.ownTasks.filter((tsk) => {
-                    const taskDate = new Date(tsk.endDate).toLocaleDateString();
+                    const taskDate = new Date(tsk.endDate);
 
-                    return taskDate === tomorrowDate;
+                    return  tomorrowDate.getTime() <= taskDate.getTime()  && taskDate.getTime() <= nextWeekDate.getTime();
                 });
                 groupOwnTasks[2] = props.state.user.ownTasks.filter((tsk) => {
                     const taskDate = new Date(tsk.endDate);
@@ -88,14 +87,14 @@ const Main = (props) => {
                 groupOwnTasks[3] = props.state.user.ownTasks.filter((tsk) =>
                     !groupOwnTasks[0].includes(tsk) && !groupOwnTasks[1].includes(tsk) && !groupOwnTasks[2].includes(tsk));
 
-                const groupSubordinatesTasks = Array(4); //|today|tomorrow|future|other
+                const groupSubordinatesTasks = Array(4); //|today|week|future|other
                 groupSubordinatesTasks[0] = props.state.user.subordinatesTasks.filter((tsk) => {
                     const taskDate = new Date(tsk.endDate).toLocaleDateString();
                     return taskDate === todayDate;
                 });
                 groupSubordinatesTasks[1] = props.state.user.subordinatesTasks.filter((tsk) => {
-                    const taskDate = new Date(tsk.endDate).toLocaleDateString();
-                    return taskDate === tomorrowDate;
+                    const taskDate = new Date(tsk.endDate);
+                    return  tomorrowDate.getTime() <= taskDate.getTime()  && taskDate.getTime() <= nextWeekDate.getTime();
                 });
                 groupSubordinatesTasks[2] = props.state.user.subordinatesTasks.filter((tsk) => {
                     const taskDate = new Date(tsk.endDate);
@@ -119,7 +118,7 @@ const Main = (props) => {
                             </div>
                         </>}
                         {groupOwnTasks[1].length === 0 ? null : <>
-                           <h4>Завтра</h4>
+                           <h4>На неделе</h4>
                             <div className={s.Tasks}>
                                 {groupOwnTasks[1].map((el, index) => <TaskBox key={index} Task={{
                                     ...el,
@@ -170,7 +169,7 @@ const Main = (props) => {
                                 </div>
                             </>}
                             {groupSubordinatesTasks[1].length === 0 ? null : <>
-                                <h4>Завтра</h4>
+                                <h4>На неделе</h4>
                                 <div className={s.Tasks}>
                                     {groupSubordinatesTasks[1].map((el, index) => <TaskBox key={index} Task={el}
                                                                                   changeTaskAttributes={changeTaskAttributes}/>)}
