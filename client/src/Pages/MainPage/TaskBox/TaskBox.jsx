@@ -40,8 +40,8 @@ const Task = (props) => {
             >{props.Task.caption}</p>
             <p className={s.priority}>Приоритет: {getPriority(props.Task.priority)}</p>
             <p className={s.status}>Статус: {getStatus(props.Task.status)}</p>
-            <p className={s.responsible}>Ответственный: {props.Task.responsible}</p>
-            <p className={s.endDate}>Срок: до {props.Task.endDate}</p>
+            <p className={s.responsible}>Ответственный: {props.Task.lastname + ' '+ props.Task.firstname + ' ' + props.Task.patronymic}</p>
+            <p className={s.endDate}>Срок: до {new Date(props.Task.endDate).toLocaleDateString()}</p>
         </div>
     )
 };
