@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e5973a6f-f934-4d4f-b1b1-101874f7ca79" name="Changes" comment="1)Связка с бд&#10;2)Новые задания создаются и изменяются&#10;3)Два блока - личных задач и задач подчиненных">
+    <list default="true" id="e5973a6f-f934-4d4f-b1b1-101874f7ca79" name="Changes" comment="1)Добавлена группировка и реализована доступность создания/изменения заданий">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Pages/MainPage/MainPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/MainPage/MainPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Pages/MainPage/MainPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/MainPage/MainPage.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +65,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662948246502</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1)Добавлена группировка и реализована доступность создания/изменения заданий">
+      <created>1662987143598</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1662987143599</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -87,6 +94,8 @@
     <MESSAGE value="1)1 Модальное окно теперь работает на 2 фронта - может как создавать объекты, так и менять их &#10;2)Окраска задач в зависимости от своего статуса и времени&#10;3) Готова для отправки запросов на API" />
     <MESSAGE value="1)Сделаны сиды и миграции&#10;2)Добавлен авторизационный middleware&#10;3)Авторизация связана с БД" />
     <MESSAGE value="1)Связка с бд&#10;2)Новые задания создаются и изменяются&#10;3)Два блока - личных задач и задач подчиненных" />
-    <option name="LAST_COMMIT_MESSAGE" value="1)Связка с бд&#10;2)Новые задания создаются и изменяются&#10;3)Два блока - личных задач и задач подчиненных" />
+    <MESSAGE value="1)Добавлена группировка и реализована доступность создания/изменения заданий&#10;2)В контроллерах изменены данные отдачи" />
+    <MESSAGE value="1)Добавлена группировка и реализована доступность создания/изменения заданий" />
+    <option name="LAST_COMMIT_MESSAGE" value="1)Добавлена группировка и реализована доступность создания/изменения заданий" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useRef, useState} from 'react';
 import s from './MainPage.module.css';
 import {observer} from "mobx-react";
 import ModalWindow from "../Components/ModalWindow/ModalWindow";
@@ -8,7 +8,7 @@ import TaskBox from "./TaskBox/TaskBox";
 const Main = (props) => {
 
     const [modalActive, setModalActive] = useState(false); //редактировать задачу
-    const [tasks, setTasks] = useState(() => [<h2>Выберите группировку</h2>]);
+    const [tasks, setTasks] = useState([<h2>Выберите группировку</h2>]);
 
     const captionRef = useRef('');
     const descriptionRef = useRef('');
@@ -34,7 +34,8 @@ const Main = (props) => {
         captionRef.current.value = task.caption;
         descriptionRef.current.value = task.description;
         priorityRef.current.value = task.priority;
-        endDateRef.current.value = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+        // endDateRef.current.value = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+        endDateRef.current.value = `${date.toLocaleDateString()}`;
         statusRef.current.value = task.status;
         responsibleRef.current.value = task.responsible;
         checkType.current = 'change|' + task.id;
@@ -257,10 +258,6 @@ const Main = (props) => {
         return result;
     }
 
-    useEffect(() => {
-        //Todo можно убрать
-    }, []);
-
     return (<>
         <div className={s.Header}>
             {/*<span className={`${s.Link}`} id={s.toMain}>Главная</span> /!*А надо ли?*!/*/}
@@ -318,8 +315,14 @@ const Main = (props) => {
                 </select>
             </div>
             <button className="btn btn-primary" onClick={async () => {
+                try{
                 const taskType = checkType.current.split('|');
-                console.log(taskType);
+                const endDateSplit = endDateRef.current.value.split('.');
+                const newDate = new Date(`${endDateSplit[2]}-${endDateSplit[1]}-${endDateSplit[0]}`);
+                if(newDate.toString() == 'Invalid Date'){
+                    alert('Incorrect date');
+                    return;
+                }
                 switch (taskType[0]) {
                     case 'change': {
                         const result = await props.state.updateTask({
@@ -327,13 +330,18 @@ const Main = (props) => {
                             caption: captionRef.current.value,
                             description: descriptionRef.current.value,
                             priority: priorityRef.current.value,
-                            endDate: endDateRef.current.value,
+                            endDate: `${newDate.getFullYear()}-${newDate.getMonth()+1}-${newDate.getDate()}`,
                             status: statusRef.current.value,
                             responsible: Number(responsibleRef.current.value)
                         });
 
-                        if (result.ok) await props.state.refreshTasks();
-                        alert(result.status);
+                        if (result.ok) {
+                            await props.state.refreshTasks();
+                            alert('Успешно');
+                        }
+                        else{
+                            alert('Произошла ошибка');
+                        }
                         break;
                     }
                     case 'create': {
@@ -345,19 +353,28 @@ const Main = (props) => {
                             status: statusRef.current.value,
                             responsible: Number(responsibleRef.current.value)
                         });
-                        if (result.ok) await props.state.refreshTasks();
-                        alert(result.status);
-                        alert('создаю')
+                        if (result.ok) {
+                            await props.state.refreshTasks();
+                            alert('Успешно');
+                        }
+                        else{
+                            alert('Произошла ошибка');
+                        }
                         break;
                     }
                 }
                 setModalActive(false);
-            }}>Готово
+            }
+                catch(err){
+                alert('Error');
+                console.log(err);
+            }}
+            }>Готово
             </button>
         </ModalWindow>
         <div className={s.Content}>
             <div>
-                <select defaultValue={'-1'} className={`form-select mb-3`} id={s.groupSelect}
+                <select defaultValue={'-1'}  className={`form-select mb-3`} id={s.groupSelect}
                         aria-label="Default select example"
                         onChange={async (event) => {
                             await props.state.refreshTasks();
